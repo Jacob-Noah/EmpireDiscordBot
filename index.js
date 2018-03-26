@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
+const client = new Discord.Client();
 
-const TOKEN = "BOT_TOKEN";
 const PREFIX = "$"
 
 var bot = new Discord.Client();
@@ -10,7 +10,7 @@ bot.on("ready", function() {
     bot.user.setPresence({game:{name:"Prefix $ | Made by VexNoid Services", type:"PLAYING"}});
     });
 
-bot.on("message", function(message)  {
+client.on("message", function(message)  {
     if (message.author.equals(bot.user)) return;
 
     if (!message.content.startsWith(PREFIX)) return;
@@ -70,4 +70,4 @@ switch (args[0].toLowerCase()) {
 }
 
 });
-bot.login(TOKEN);
+client.login(process.env.BOT_TOKEN);

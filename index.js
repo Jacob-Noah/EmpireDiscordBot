@@ -30,7 +30,7 @@ switch (args[0].toLowerCase()) {
     message.channel.send("Check yo DM'S! :scream:")
     break;
     case "dmall":
-    if (args.length >= 3) {
+    if (args.length >= 2) {
         if (message.member.roles.find("name", "[Owner]")) {
             args.shift();
             let user = message.mentions.users.first();
